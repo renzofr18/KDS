@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Button} from '../../globalStyles'
 
 const DivOrders = styled.div`
 
@@ -15,4 +16,18 @@ flex-wrap: wrap;
 display: inline-block
 `
 
-export  {DivOrders}
+const ButtonCancel = styled(Button)`
+background: #D35F5F;
+&:hover{
+   background: #B10505
+}
+`   
+const ButtonComplete = styled(Button)`
+background: #62BF60;
+&:hover{
+    background: #0C700A;
+ }
+`
+
+
+export  {DivOrders, ButtonCancel, ButtonComplete }

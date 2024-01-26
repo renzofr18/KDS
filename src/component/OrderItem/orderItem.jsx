@@ -1,14 +1,16 @@
 import { useDispatch } from 'react-redux';
 import {assignStatusInProcess, assignStatusInCompleted, assignStatusInCancelled} from '../Store/orderSlice';
-import {DivOrders} from './orderItemStyles';
+import {DivOrders, ButtonCancel, ButtonComplete} from './orderItemStyles';
 import {Button} from '../../globalStyles'
+import {EN_PROCESO, PENDIENTE, status} from '../../Data/status'
+
 
 
 export const OrderItem = ({ order, Cancel }) => {
   const dispatch = useDispatch();
 
   return (
-    <DivOrders>
+    <DivOrders style={{backgroundColor:status[order.status].color}}>
       <div>
         <h2>{order.name}</h2>
           <p>{order.detail}</p>
@@ -28,15 +30,15 @@ export const OrderItem = ({ order, Cancel }) => {
   order.status === 'Pendiente' &&
   <div>
     <Button className='In_process' onClick={() => dispatch(assignStatusInProcess(order.id))}>En proceso</Button>
-    <Button  className='Cancel' onClick={() => dispatch(assignStatusInCancelled(order.id))}>Cancelado</Button>
+    <ButtonCancel  className='Cancel' onClick={() => dispatch(assignStatusInCancelled(order.id))}>Cancelado</ButtonCancel>
   </div>
 }
 
 {
   order.status === 'En proceso' &&
   <div>
-    <Button  onClick={() => dispatch(assignStatusInCompleted(order.id))}>Completado</Button>
-    <Button className={Cancel} onClick={() => dispatch(assignStatusInCancelled(order.id))}>Cancelado</Button>
+    <ButtonComplete  onClick={() => dispatch(assignStatusInCompleted(order.id))}>Completado</ButtonComplete>
+    <ButtonCancel className={Cancel} onClick={() => dispatch(assignStatusInCancelled(order.id))}>Cancelado</ButtonCancel>
   </div>
 }
 

@@ -1,11 +1,11 @@
 import { Filter_buttons } from "../../Data/data";
-import {Ul, Li, Div} from '../../globalStyles';
+import {Ul, Li, DivFilter} from './filterListStyles';
 
 export const FilterList = ({ onFilterChange }) => {
   return (
-    <Div>
+    <DivFilter>
       <Ul key={"lista"}>
-        {Object.entries(Filter_buttons).map(([key, { label, value }]) => {
+        {Object.entries(Filter_buttons).map(([key, { label, value }], index) => {
           return (
             <>
             <Li
@@ -16,13 +16,15 @@ export const FilterList = ({ onFilterChange }) => {
             >
               {label}
             </Li>
-            <Li>
+            {Object.entries(Filter_buttons).length - 1 !== index && 
+              <Li>
               | 
             </Li>
+            }   
             </>
           );
         })}
       </Ul>
-    </Div>
+    </DivFilter>
   );
 };
