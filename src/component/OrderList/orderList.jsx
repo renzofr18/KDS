@@ -9,7 +9,7 @@ export const OrderList = () => {
   const [filterSelected, setFilterSelected] = useState("all");
   const orders = useSelector((state) => state.orders);
 
-  const selectedOrders = filterSelected === "all" ? orders : [...orders].filter((order) => order.status === filterSelected && order.status !== "all");
+  const selectedOrders = filterSelected === "all" ? orders : orders.filter((order) => order.status === filterSelected && order.status !== "all");
 
   const handleSelectedFilter = (filter) => {
     setFilterSelected(filter);
