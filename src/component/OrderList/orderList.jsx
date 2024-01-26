@@ -3,6 +3,7 @@ import { OrderItem } from "../OrderItem/orderItem.jsx";
 import { FilterList } from "../FilterList/filterList.jsx";
 import { useState } from "react";
 import { Filter_all } from "../../Data/data.jsx";
+import { DivList } from "./oderListStyles.jsx";
 
 export const OrderList = () => {
   const [filterSelected, setFilterSelected] = useState(Filter_all);
@@ -26,13 +27,13 @@ export const OrderList = () => {
         filterSelected={filterSelected}
         onFilterChange={handleSelectedFilter}
       />
-      <br/>
+      <br />
       <div>
         {selectedOrders &&
           selectedOrders.map((order) => (
             <OrderItem key={order.id} order={order} />
           ))}
-        {selectedOrders.length === 0 && <p>No hay ordenes aquí</p>}
+        {selectedOrders.length === 0 && <DivList>No hay ordenes aquí</DivList>}
       </div>
     </>
   );

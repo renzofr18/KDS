@@ -7,13 +7,16 @@ display: inline;
 `
 const Li = styled.li`
 
+width: 20px;
 display: inline;
 margin-right: 10px;
 margin-left: 10px;
 &:hover{
-    font-size: 18px;
-    color: red;
+    font-size: 15px;
+    color: #B2DAFA;
 }
+color: white;
+cursor:pointer;
 `
 
 const DivFilter = styled.div`
