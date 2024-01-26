@@ -6,10 +6,10 @@ import { useState} from 'react';
 
 export const OrderList = () => {
 
-  const [filterSelected, setFilterSelected] = useState("all");
+  const [filterSelected, setFilterSelected] = useState(Filter_all);
   const orders = useSelector((state) => state.orders);
 
-  const selectedOrders = filterSelected === "all" ? orders : orders.filter((order) => order.status === filterSelected && order.status !== "all");
+  const selectedOrders = filterSelected === Filter_all ? orders : orders.filter((order) => order.status === filterSelected && order.status !== Filter_all);
 
   const handleSelectedFilter = (filter) => {
     setFilterSelected(filter);
