@@ -1,9 +1,10 @@
 import { OrderList } from './component/OrderList/orderList'
+import {H1} from './globalStyles'
 
 function App() {
   return (
     <div>
-    <h1>Kitchen Display System para IDBI</h1>
+    <H1>Kitchen Display System para IDBI</H1>
       <OrderList />
     </div>
   )

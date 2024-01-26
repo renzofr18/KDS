@@ -1,16 +1,20 @@
-import { useSelector } from 'react-redux';
-import {OrderItem} from '../OrderItem/orderItem.jsx';
-import { FilterList } from '../FilterList/filterList.jsx'
-import { useState} from 'react';
-import {Filter_all} from '../../Data/data.jsx'
-
+import { useSelector } from "react-redux";
+import { OrderItem } from "../OrderItem/orderItem.jsx";
+import { FilterList } from "../FilterList/filterList.jsx";
+import { useState } from "react";
+import { Filter_all } from "../../Data/data.jsx";
 
 export const OrderList = () => {
-
   const [filterSelected, setFilterSelected] = useState(Filter_all);
   const orders = useSelector((state) => state.orders);
 
-  const selectedOrders = filterSelected === Filter_all ? orders : orders.filter((order) => order.status === filterSelected && order.status !== Filter_all);
+  const selectedOrders =
+    filterSelected === Filter_all
+      ? orders
+      : orders.filter(
+          (order) =>
+            order.status === filterSelected && order.status !== Filter_all
+        );
 
   const handleSelectedFilter = (filter) => {
     setFilterSelected(filter);
@@ -18,16 +22,17 @@ export const OrderList = () => {
 
   return (
     <>
-      <FilterList filterSelected={filterSelected} onFilterChange={handleSelectedFilter} />
+      <FilterList
+        filterSelected={filterSelected}
+        onFilterChange={handleSelectedFilter}
+      />
+      <br/>
       <div>
-        {
-          selectedOrders && selectedOrders.map((order) => (
+        {selectedOrders &&
+          selectedOrders.map((order) => (
             <OrderItem key={order.id} order={order} />
-          ))
-        }
-        {
-          selectedOrders.length === 0 && <p>No hay ordenes aquí</p>
-        }
+          ))}
+        {selectedOrders.length === 0 && <p>No hay ordenes aquí</p>}
       </div>
     </>
   );

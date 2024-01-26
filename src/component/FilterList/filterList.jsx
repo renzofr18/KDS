@@ -1,22 +1,28 @@
 import { Filter_buttons } from "../../Data/data";
+import {Ul, Li, Div} from '../../globalStyles';
 
-export const FilterList = ({ filterSelected, onFilterChange }) => {
+export const FilterList = ({ onFilterChange }) => {
   return (
-    <div>
-      <ul>
+    <Div>
+      <Ul key={"lista"}>
         {Object.entries(Filter_buttons).map(([key, { label, value }]) => {
           return (
-            <li
+            <>
+            <Li
               key={key}
               onClick={() => {
                 onFilterChange(value);
               }}
             >
               {label}
-            </li>
+            </Li>
+            <Li>
+              | 
+            </Li>
+            </>
           );
         })}
-      </ul>
-    </div>
+      </Ul>
+    </Div>
   );
 };
