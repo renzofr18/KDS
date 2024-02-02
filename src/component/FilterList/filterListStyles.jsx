@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Ul = styled.ul`
 
-display: inline;
+text-align: center;
 
 `
 const Li = styled.li`
@@ -17,11 +17,16 @@ margin-left: 10px;
 }
 color: white;
 cursor:pointer;
+text-align: center;
+`
+
+const DivList = styled.div`
+display: inline;
+text-align: center;
 `
 
 const DivFilter = styled.div`
 
-text-align: center;
 `
 
-export {Ul, Li, DivFilter}
+export {Ul, Li, DivList}

@@ -2,11 +2,11 @@ import { useDispatch } from 'react-redux';
 import {assignStatusInProcess, assignStatusInCompleted, assignStatusInCancelled} from '../Store/orderSlice';
 import {DivOrders, ButtonCancel, ButtonComplete} from './orderItemStyles';
 import {Button} from '../../globalStyles'
-import {EN_PROCESO, PENDIENTE, status} from '../../Data/status'
+import {status} from '../../Data/status'
 
 
 
-export const OrderItem = ({ order, Cancel }) => {
+export const OrderItem = ({ order }) => {
   const dispatch = useDispatch();
 
   return (
@@ -38,10 +38,9 @@ export const OrderItem = ({ order, Cancel }) => {
   order.status === 'En proceso' &&
   <div>
     <ButtonComplete  onClick={() => dispatch(assignStatusInCompleted(order.id))}>Completado</ButtonComplete>
-    <ButtonCancel className={Cancel} onClick={() => dispatch(assignStatusInCancelled(order.id))}>Cancelado</ButtonCancel>
+    <ButtonCancel  onClick={() => dispatch(assignStatusInCancelled(order.id))}>Cancelado</ButtonCancel>
   </div>
 }
-
     </DivOrders>
   );
 };

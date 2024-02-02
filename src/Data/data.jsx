@@ -2,7 +2,7 @@ export const Orders = [
   {
     id: 1,
     name: "Chifa",
-    detail: "poco webo",
+    detail: "",
     status: "Pendiente",
     quantity: 1,
     price: 15.0,
@@ -11,7 +11,7 @@ export const Orders = [
   {
     id: 2,
     name: "Lomo saltado",
-    detail: "Poner algo aqui",
+    detail: "Papas crocantes, lomo termino medio",
     status: "Pendiente",
     quantity: 1,
     price: 20.0,
@@ -20,7 +20,7 @@ export const Orders = [
   {
     id: 3,
     name: "Tallarines verdes",
-    detail: "Poner algo aqui",
+    detail: "Con salsa huancaina adicional",
     status: "Pendiente",
     quantity: 1,
     price: 14.0,
@@ -29,7 +29,7 @@ export const Orders = [
   {
     id: 4,
     name: "Ají de gallina",
-    detail: "Poner algo aqui",
+    detail: "Sin nuez moscada",
     status: "Pendiente",
     quantity: 1,
     price: 16.0,
@@ -38,7 +38,7 @@ export const Orders = [
   {
     id: 5,
     name: "Pallares verdes",
-    detail: "Poner algo aqui",
+    detail: "Agregar porcion de pollo",
     status: "Pendiente",
     quantity: 1,
     price: 10.0,
@@ -47,7 +47,7 @@ export const Orders = [
   {
     id: 6,
     name: "Arroz con pato",
-    detail: "Poner algo aqui",
+    detail: "Salsa a la huancaina adicional",
     status: "Pendiente",
     quantity: 1,
     price: 25.0,

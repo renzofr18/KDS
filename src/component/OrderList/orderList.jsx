@@ -14,7 +14,7 @@ export const OrderList = () => {
       ? orders
       : orders.filter(
           (order) =>
-            order.status === filterSelected && order.status !== Filter_all
+            order.status === filterSelected
         );
 
   const handleSelectedFilter = (filter) => {

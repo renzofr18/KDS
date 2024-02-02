@@ -4,9 +4,9 @@ import { Orders, OrderState } from '../../Data/data';
 const initialState = Orders;
 
 export const orderSlice = createSlice({
-  name: 'Ordenes',
-  initialState,
-  reducers: {
+  name: 'Ordenes', //nombre del slice
+  initialState, //valor inicial del slice definido antes
+  reducers: { //define los reductores los cuales actualizan el estado segun las acciones
 
     assignStatusInProcess: (state, action) => {
       const order = state.find((order) => order.id === action.payload);
