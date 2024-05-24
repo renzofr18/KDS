@@ -1,10 +1,11 @@
-import { Filter_buttons } from "../../Data/data";
-import { Inputt, Ul, Li, DivList } from "./filterListStyles";
+import { useState } from "react";
+import { Filter_buttons, Orders } from "../../Data/data";
+import { Ul, Li, DivList } from "./filterListStyles";
 
 export const FilterList = ({ onFilterChange }) => {
   return (
     <DivList>
-      <Ul>
+      <Ul key={"filtro"}>
         {Object.entries(Filter_buttons).map(
           ([key, { label, value }], index) => {
             return (
@@ -15,7 +16,7 @@ export const FilterList = ({ onFilterChange }) => {
                   }}
                 >
                   {label}
-                </Li>
+                </Li >
                 {Object.entries(Filter_buttons).length - 1 !== index && (
                   <Li>|</Li>
                 )}
@@ -24,7 +25,6 @@ export const FilterList = ({ onFilterChange }) => {
           }
         )}
       </Ul>
-      <Inputt type="text" placeholder="Buscar pedido"/>
     </DivList>
   );
 };
